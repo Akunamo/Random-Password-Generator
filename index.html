@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random Password Generator</title>
+    <script src="pass.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section class="container">
+            
+            <div class="form-container">
+                <h1 class="title">Password Generator</h1>
+                <p class="password">Password</p>
+
+                <form class="passwordForm">
+        
+                    <div class="amountContainer">
+                        <label for="characterAmount">Character Length</label>
+                        <input id="characterAmount" type="range" min="0" max="50" value="8">
+                    </div>
+
+                    <div class="input-grid">
+
+                        <input id="includeUppercase" type="checkbox">
+                        <label for="includeUppercase">Include Uppercase Letters</label>
+
+                        <input id="includeLowercase" type="checkbox">
+                        <label for="includeLowercase">Include Lowercase Letters</label>
+
+                        <input id="includeNumbers" type="checkbox">
+                        <label for="includeNumbers">Include Numbers</label>
+
+                        <input id="includeSymbols" type="checkbox">
+                        <label for="includeSymbols">Include Symbols</label>
+                    </div>
+                    <p class="warning">Please select at least one of the above</p>
+                    <p class="strength">STRENGTH<span><span class="strength-indicator"></span></span></p>
+                    <button type="submit" class="generate-btn">Generate</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
