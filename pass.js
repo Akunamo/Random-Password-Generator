@@ -3,23 +3,34 @@ const btn = document.querySelector(".generate-btn");
 const form = document.querySelector(".passwordForm");
 const password = document.querySelector(".password");
 const charAmount = document.getElementById("characterAmount");
+const amount = document.querySelector(".amount");
 
 const includeUppercase = document.getElementById("includeUppercase");
 const includeLowercase = document.getElementById("includeLowercase");
 const includeSymbols = document.getElementById("includeSymbols");
 const includeNumbers = document.getElementById("includeNumbers");
 
+const warning = document.querySelector(".warning");
+
 const UPPER_CASE_LETTERS = arrayFromLowToHigh(65, 90);
 const LOWER_CASE_LETTERS = arrayFromLowToHigh(97, 122);
 const SYMBOLS = arrayFromLowToHigh(33, 44);
 const NUMBERS = arrayFromLowToHigh(48, 57);
 
-const warning = document.querySelector(".warning")
 form.addEventListener("submit", e => {
     e.preventDefault();
 })
 
 btn.addEventListener("click", generatePassword);
+charAmount.addEventListener('change',updateLength);
+amount.addEventListener('change',updateLength);
+
+
+function updateLength(e) {
+  const value = e.target.value
+  charAmount.value = value;
+  amount.value = value
+}
 
 function generatePassword(e) {
   warning.classList.remove("active")
@@ -43,7 +54,7 @@ function generatePassword(e) {
       let elem = includes[Math.floor(Math.random() * includes.length)]    
       pass.push(elem)
   } 
-  password.textContent = pass.join("");
+  password.value = pass.join("");
 }
 
 function arrayFromLowToHigh(low, high) {
