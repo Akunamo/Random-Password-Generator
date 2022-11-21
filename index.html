@@ -16,12 +16,14 @@
             
             <div class="form-container">
                 <h1 class="title">Password Generator</h1>
-                <p class="password">Password</p>
+                <input class="password">
 
                 <form class="passwordForm">
-        
                     <div class="amountContainer">
-                        <label for="characterAmount">Character Length</label>
+                        <div class="flex">
+                            <label for="characterAmount">Character Length</label>
+                            <input class="amount" type="text" min="0" max="50" value="8">
+                        </div>
                         <input id="characterAmount" type="range" min="0" max="50" value="8">
                     </div>
 
